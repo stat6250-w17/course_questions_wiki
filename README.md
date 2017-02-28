@@ -30,8 +30,8 @@ To contribute,
 - Answer: TBD
 
 ## Chapter 3 Questions
-[Chapter 3 Problem 1]
-Question (SK):What is the main difference between snippets and abbreviation?
+[Chapter 3 Problem 1]\n
+**Question (SK):What is the main difference between snippets and abbreviation?**\n
 Answer (SK): Snippets are small piece of code that actuaaly run and can be used in a larger programe.Ans abbreviation is short hand notation.
 
 ## Chapter 4 Questions
