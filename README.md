@@ -65,10 +65,12 @@ value that contains a four-digit year value will be interpreted correctly even i
 
 
 ## Chapter 11 Questions
-
+* Question(SK)-Can we create a new variable within a new dataset that is different from the one in set statement?*
+* Answer-TBD
 
 ## Chapter 12 Questions
-
+* Qusetion (SK)-Does Proc SQL has all the SQL commands ? like for e;g inner and outer join?*
+*Answer -TBD
 
 ## Chapter 13 Questions
 
