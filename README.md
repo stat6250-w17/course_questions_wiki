@@ -51,9 +51,11 @@ value that contains a four-digit year value will be interpreted correctly even i
 
 ## Chapter 5 Questions
 * ** Question(SK)- How we can write an programe that do assignment and increments in a vaiable together in SAS ?**
+-Answer-TBD
 
 ## Chapter 6 Questions
 * ** Question (SK)- DATA step reads values from the file Invent and executes as many times the number of records are there.What if there is a row but value is missing? **
+-Answer-TBD
 
 ## Chapter 7 Questions
 
