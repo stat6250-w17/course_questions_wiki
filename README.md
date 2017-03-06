@@ -18,8 +18,8 @@ To contribute,
 
 ## Chapter 1 Questions
 *[Chapter 1 , Problem 2 ]
-*Question (SK): Is indentation  crucial in SAS or it is just for readability?If not then why does some programs gives error because of wrong indentation?*
-*Answer (SK) : Writing codes with proper indent is a bset practice for programming.*
+** *Question (SK): Is indentation  crucial in SAS or it is just for readability?If not then why does some programs gives error because of wrong indentation?**
+* **Answer (SK) : Writing codes with proper indent is a bset practice for programming.**
 
 ## Chapter 2 Questions
 
