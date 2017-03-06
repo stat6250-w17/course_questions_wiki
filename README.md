@@ -17,7 +17,9 @@ To contribute,
 ********************************************************************************
 
 ## Chapter 1 Questions
-
+*[Chapter 1 , Problem 2 ]
+-Question (SK): Is indentation  crucial in SAS or it is just for readability?If not then why does some programs gives error because of wrong indentation?
+-Answer (SK) : Writing codes with proper indent is a bset practice for programming.
 
 ## Chapter 2 Questions
 
@@ -34,7 +36,7 @@ To contribute,
 
 * **Question (SK):What is the main difference between snippets and abbreviation?**
 
-*Answer (SK): Snippets are small piece of code that actuaaly run and can be used in a larger programe.Ans abbreviation is short hand notation.
+*  **Answer (SK): Snippets are small piece of code that actually run and can be used in a larger programe.Ans abbreviation is short hand notation.**
 
 ## Chapter 4 Questions
 
