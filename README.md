@@ -33,7 +33,7 @@ The instructor will then review the pull request and make comments should furthe
     process before output.
     
 - Question (AS): Is there a way to print out the values of certain variables during debugging i.e. equivalent of a print statement?
-- Answer: TBD
+- Answer(AS): Use PUT statements to print the values of variables to the log.
 
 \[Chapter 1, Problem 3\]
 - Question (WF): Can a variable's type be both character and numeric?
@@ -62,10 +62,11 @@ The instructor will then review the pull request and make comments should furthe
 
 - Question (WF): With 4 digit year values in data lines to be read correctly, does it mean that the YEARCUTOFF=option can be eliminated in the program data lines?
 - Answer (WF): yes.
+- Answer (AS): The YEARCUTOFF= variable is only used while interpreting(reading/writing) 2 digit year values. It can be set but is ignored while reading 4-digit year values. 
 
 - Question (AS): Does YEACUTOFF= option also affect how data is interpreted while writing into and creating a new
    data set or only while reading in from an existing data set ?
-- Answer: TBD
+- Answer (AS): Yes, it affects both read and write operations.
 
 \[Chapter 2, Problem 7\]
 - Question (IL): What's the difference between starting a SAS program with "data" versus "proc", and why do both end types of programs end with the same "run" command, even though the bodies of the programs look nothing alike?
@@ -93,14 +94,14 @@ The instructor will then review the pull request and make comments should furthe
 - Question (AS): Can one sas library(folder) contain both SAS native format and external file types ? Does SAS automatically determine if/when to use the extra 'engine' parameter in the libname statement to use for reading the non-SAS file ?
 - Answer: TBD
 - Question (AS): what statement is used to delete a libref within a SAS program? opposite of LIBNAME?
-- Answer: TBD
+- Answer (AS): .e.g LIBNAME libref CLEAR;
 - Question (WF):  How to reference a library which is also a data file? for example, libname rptdata spss 'g:\\myspss.spss';
 - Answer (WF): libname xdb excel "c:\\mymachine\\pcfdata\\demo.xlsx";
 
 ## Chapter 3 Questions
 [Chapter 3, General Questions]
-- Question (AS): Is there a way to print out the values of certain variables during debugging i.e. equivalent of a print statement?
-- Answer: TBD
+- Question (AS): Is there a way to print out the values of certain variables during debugging i.e. equivalent of a print statement?(repeated questions. See Chapter 1)
+- Answer (AS): Use PUT statements to print the values of variables to the log.
 
 \[Chapter 3, Problem 1\]
 - Question (WF): Can DATA and PROC steps begin somewhere else other than column one? How about the RUN statement?
@@ -109,12 +110,14 @@ The instructor will then review the pull request and make comments should furthe
 \[Chapter 3, Problem 3\]
 - Question (WF): When syntax errors like unbalanced quotation marks are in a program, can quotation marks be added and resubmit the program to fix the error?
 - Answer (WF): Yes, SAS program can be run or re-run by selecting a block of codes.
+- Answer (AS): Also, it is always a good idea to clear the log before re-running the program so its easier to identify any new errors that pop up.
 
 - Question (WF): if we use "sum" command, does the "fee" have to be defined in the variable section? 
 - Answer (WF): “fee” is a variable in dataset clinic.stress.
 
 - Question (WF): What are some errors that SAS can correct automatically? 
 - Answer (WF): SAS does not correct error automatically, it find error for you.
+- Answer (AS): SAS can sometimes interpret a misspelled keyword or other syntax error. In such cases, it would continue execution but a message is printed out into the log.
 
 \[Chapter 3, Question 5\]
 - Question (WF): what happens if the data values are not appropriate for the SAS statements? Is there a way to convert the data? 
@@ -139,6 +142,7 @@ The instructor will then review the pull request and make comments should furthe
 
 - Question (WF): Are English date formats the only formats SAS processes/produces? 
 - Answer (WF): No, you can use “OPTIONS DATESTYLE=mdy; “ (or YDM, or YMD, or DMY…) to change date format.
+- Answer (AS): Use informats to tell SAS how to read in a datevalue from an external file. SAS uses the informat to interpret the value read in from the input buffer and then calculates number of days since Jan 1, 1960 and stores that integer value as in the output dataset. Similarly, use formats to tell SAS, how to present the number in the dataset as a date while displaying the data. Informats and formats are key to making sense of SAS dates.
 
 - Question (WF): When do we want to make a label instead of just using them as a variable? Is it when for the convenience of the variables?
 - Answer (WF): Using a LABEL statement in a DATA step permanently associates labels with variables by affecting the descriptor information of the SAS data set that contains the variables. 
@@ -161,6 +165,7 @@ The instructor will then review the pull request and make comments should furthe
 \[Chapter 4, Problem 10\]
 - Question (WF): what’s to do if we want to remove columns or rows for the table that is not sorted through frequency?
 - Answer (WF): To remove observations in SAS, you can use the IF statement in a DATA step, search and remove matched observation. 
+- Answer (AS): You can use a subsetting IF statement to limit which rows are considered in a data or proc step. Also, the WHERE statement is a good way to restrict the rows that are processed in a step. To limit column, use DROP or KEEP statements.
 
 - Question (WF): Can you specify triple spacing or more within the proc print statement?
 - Answer (WF): No, there is an only double space.
@@ -169,6 +174,7 @@ The instructor will then review the pull request and make comments should furthe
 - Answer(BP):DATA and PROC statements signal the beginning of a new step. When SAS encounters a subsequent DATA, PROC, or RUN statement (for DATA steps and most procedures) or a QUIT statement (for some procedures), SAS stops reading statements and executes the previous step in the program. In our sample program, each step ends with a RUN statement.
 - Question(BP): Does Data step statement produces output after executing Data step statement?
 - Answer(BP) When the program is processed, it creates the SAS data set. The DATA step produces messages in the SAS log, but it does not create a report or other output.
+- Answer(AS): The output of a data step is the new dataset thats named in the 'DATA dataset_name' statement. A data step can also output a raw datafile when a 'data _NULL_' statement is used to tell SAS that no new dataset should be created and instead the output should be directed toa  file in the 'FILE file_location' statement within teh DATA step.
 
 ## Chapter 5 Questions
 \[Chapter 5, Problem 1\]
@@ -302,10 +308,24 @@ Then to modify the column size, use a *PROC SQL* statement:
 
 
 ## Chapter 7 Questions
-
 [Chapter 7 ,Problem 7]
 - Question (SK): Need to see an example using "OTHER" for missing numeric values in a proc format step?
 - Answer:TBD
+- Answer (AS): Here is an example of how you could describe someone based on their age. Anyone in the age category 0 to 6 can be described as 'Innocent' etc. So for anyone whose age is missing, it would classify it as 'unknown' 
+proc format library=sample_formats;
+     value ageAttitude 0  < 6   = 'innocent'
+                       6  < 10  = 'witty'
+		       10 < 18  = 'brats'
+                       21 < 100 = 'wise'
+		       OTHER    = 'unknown'
+;		       
+		     
+
+[Chapter 7 ,Problem General question]
+- Question (AS): Is there a way to associate a format catalog to an entire library of datasets so all the datasets in a library have access to those formats? Is that implicit through 'library=' statement? Alternatively, can a permanent library containing only formats be created and used across many different library of datasets ?
+- Answer:TBD
+
+
 
 ## Chapter 8 Questions
 
