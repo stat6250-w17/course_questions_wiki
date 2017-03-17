@@ -631,9 +631,18 @@ word " of ", the function argument might not be interpreted as expected as long 
 - Question (WF): How can I set the default variable length globally to something lower than 200?
 - Answer (WF): SAS gives the variable a default type and length, and you cannot change the default.
 
+- Question (MD): Can the MDY order be overridden by the system?
+- Answer (MD): No, the MDY function cannot be overridden by the system.
+
+- Question (MD): Can MDY be made to handle 5 digit years?
+- Answer (MD): MDY is already able to handle 5 year digits. You can use a year like 13924 and MDY will able to process it properly. Additionally, if YEARCUTOFF=13900 24 will be interpreted as 13924 when used in MDY.
+
 \[Chapter 13, Problem 7\]
 - Question (WF): Can I use negative values in SUBSTR as is the case in many other programming languages?
 - Answer (WF): The SUBSTR function takes a character matrix as an argument (along with starting positions and lengths) and produces a character matrix with the same dimensions as the argument. Elements of the result matrix are substrings of the corresponding argument elements, which they are all greater than 0.
+
+- Question (MD): How does substr handle missing values?
+- Answer (MD): First, keep in mind that the length of a character missing value is 1 and not 0. As this is the case, substr will likely not handle accidental missing value elegantly. For a substr(source,position,n), position cannot point past the end of source, and nor can n. So anything beyond 1 will yield an error. Information sourced from: http://www2.sas.com/proceedings/sugi25/25/cc/25p088.pdf and http://analytics.ncsu.edu/sesug/2003/PS08-Go.pdf
 
 \[Chapter 13, Problem 10\]
 - Question (WF): What happens if we take out the "lowcase" command?
