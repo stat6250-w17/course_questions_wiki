@@ -350,7 +350,6 @@ Then to modify the column size, use a *PROC SQL* statement:
 ## Chapter 7 Questions
 [Chapter 7 ,Problem 7]
 - Question (SK): Need to see an example using "OTHER" for missing numeric values in a proc format step?
-- Answer:TBD
 - Answer (AS): Here is an example of how you could describe someone based on their age. Anyone in the age category 0 to 6 can be described as 'Innocent' etc. So for anyone whose age is missing, it would classify it as 'unknown' 
 proc format library=sample_formats;
      value ageAttitude 0  < 6   = 'innocent'
