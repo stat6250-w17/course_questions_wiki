@@ -509,6 +509,10 @@ proc format library=sample_formats;
 	put ’L=’l;
 	
 ```
+[Chapter 10, Question 10]
+- Question (SK): What is the purpose of "KEEP" and "DROP" statements ?
+- Answer (SK): The KEEP statement is similar to the DROP statement, except that the KEEP statement specifies a list of variables to write to output data sets. Use the KEEP statement instead of the DROP statement if the number of variables to keep is smaller than the number to drop. Also , to select variables, you can use a DROP or KEEP statement in any DATA step. You can also use the DROP= or KEEP= data set options following a data set name in any DATA or PROC step. However, you cannot use DROP or KEEP statements in PROC steps.
+
 ## Chapter 11 Questions
 
 \[Chapter 11, Problem 1\]
@@ -700,6 +704,8 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 - Question (WF): Can a Do-loops be inside another Do-loops?
 - Answer (WF): Yes, like other languages, SAS allows Do-Loop inside a Do-Loop.
 
+- Question (SK): What is the purpose of insex variable ?
+- Answer (SK): The index variable is used only to execute the DO loop, so it is dropped from the new data set. It is used as the stop value in the iterative DO statement. As a result, the DO loop executes the number of times specified by the current value of variable.
 
 ## Chapter 15 Questions
 \[Chapter 15, Problem 1\]
@@ -722,6 +728,9 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 
 - Question (WF): How do I combine two arrays?
 - Answer (WF): You need to extract variable’s value from source array, perform calculation, and then write value to the destination array.
+
+- Question (SK): What is the most important thing to consider when using SAS array ?
+- Answer (SK): Do not give an array the same name as a variable in the same DATA step. Also , avoid using the name of a SAS function as an array name; the array will be correct, but you won't be able to use the function in the same DATA step, and a warning will be written to the SAS log
 
 \[Chapter 15, Problem 8\]
 - Question (WF): What is the purpose of temporary array?
