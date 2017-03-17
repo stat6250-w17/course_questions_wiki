@@ -105,9 +105,6 @@ The instructor will then review the pull request and make comments should furthe
 - Answer (WF): SAS reserves a few names for automatic variables and variable lists, SAS data sets, and librefs, such as WORK, SASHELPER, SASUSER...
 
 ## Chapter 3 Questions
-[Chapter 3, General Questions]
-- Question (AS): Is there a way to print out the values of certain variables during debugging i.e. equivalent of a print statement?(repeated questions. See Chapter 1)
-- Answer (AS): Use PUT statements to print the values of variables to the log.
 
 \[Chapter 3, Problem 1\]
 - Question (WF): Can DATA and PROC steps begin somewhere else other than column one? How about the RUN statement?
