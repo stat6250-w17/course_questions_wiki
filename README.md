@@ -24,7 +24,7 @@ The instructor will then review the pull request and make comments should furthe
 - Question (SK): Is indentation  crucial in SAS or it is just for readability? If not then why does some programs gives error because of wrong indentation?
 - Answer (SK): Writing codes with proper indent is a best practice for programming.
 
-[Chapter 1}
+[Chapter 1]
 - Question (YM): Is run statement required for every data and proc step?
 - Answer (YM): Run statement is not required in every step in SAS program, however having it make every block of statement easier to read and debu.
 
