@@ -40,8 +40,8 @@ The instructor will then review the pull request and make comments should furthe
 - Question (IL): What is a "libref", and how does it differ from a "LIBNAME"?  In particular, what fundamental distinction causes one to be written out in lower-case letters and the other in upper-case letters?
 - Answer (SG): A libname statement is the syntactical statement used to initiate a particular library. The libref is the actual syntax used to name it.
 
--Question (YM): What is the difference between Temporary Data Library and Permanent Data Library?
--Answer (YM): If not library name is specified, SAS by defaults creates the data in temporary library called Work. However, this library doesn't persist when the SAS session is closed.
+- Question (YM): What is the difference between Temporary Data Library and Permanent Data Library?
+- Answer (YM): If not library name is specified, SAS by defaults creates the data in temporary library called Work. However, this library doesn't persist when the SAS session is closed.
 
 ## Chapter 3 Questions
 - Question (AS): Is there a way to print out the values of certain variables during debugging i.e. equivalent of a print statement?
