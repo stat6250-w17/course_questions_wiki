@@ -50,8 +50,8 @@ The instructor will then review the pull request and make comments should furthe
 - Question (YM): What are three different types of Programming Windows in SAS application? Describe.
 - Answer (YM): SAS has three different types of Windows, Editor Window, Log Window and Output Window. Log window is where all SAS code is created and edited. All SAS files by default are opened with this window. Log window is where all Errors and Warning are written during the session for DATA and PROC steps. Output windows are where all the reports and output are generated. 
 
-Question (YM): What happens if a SAS statement is not terminated with a semicolon?
-Answer(YM): If the statement is not terminated with a semicolon, SAS considers the next statement as part of the original statement and SAS will generate a error message whichi most likely will be a syntax error.
+- Question (YM): What happens if a SAS statement is not terminated with a semicolon?
+- Answer(YM): If the statement is not terminated with a semicolon, SAS considers the next statement as part of the original statement and SAS will generate a error message whichi most likely will be a syntax error.
 
 
 ## Chapter 4 Questions
@@ -61,9 +61,9 @@ Answer(YM): If the statement is not terminated with a semicolon, SAS considers t
 - Question(BP): Does Data step statement produces output after executing Data step statement?
 - Answer(BP) When the program is processed, it creates the SAS data set. The DATA step produces messages in the SAS log, but it does not create a report or other output.
 - Question (YM): What is the basic form of report in SAS and how can it be produced?
-- Answer (YM): The most basic report can be created using PROC statement PROC PRINT DATA=Data_Source; RUN; This is similar to doing a select * from table_name statement in SQL.
-- Question (YM): What happens when OUT= option is not specified in PROC statement PROC SORT?
-- If not OUT= option is provided, PROC SORT will overwrite the original dataset with the sorted results.
+- Answer(YM): The most basic report can be created using PROC statement PROC PRINT DATA=Data_Source; RUN; This is similar to doing a select * from table_name statement in SQL.
+- Question(YM): What happens when OUT= option is not specified in PROC statement PROC SORT?
+- Answer(YM): If not OUT= option is provided, PROC SORT will overwrite the original dataset with the sorted results.
 
 ## Chapter 5 Questions
 [Chapter 5, Problem 7]
@@ -71,18 +71,18 @@ Answer(YM): If the statement is not terminated with a semicolon, SAS considers t
 - Answer (AS): SAS provides the slash (/) and #n to handle cases where more than one record in the input file is required to compose one observation in the dataset. When SAS encounters a slash, it continues to read values till end of Input statement. Then writes the PDV out as one observation. The slash is a relative line pointer and #n is a specifc line pointer.
 - Question (SK): Is there a way we can change the columns name and its size once we defined them ? How can we delete a column or reduce its size?
 - Answer: TBD
-- Question (YM): What happens to excel data that is imported in SAS if excel file has different sheets?
-- Answer (YM): If more than one sheets are there in an excel sheet, they are made available in SAS library as different datasets.
+- Question(YM): What happens to excel data that is imported in SAS if excel file has different sheets?
+- Answer(YM): If more than one sheets are there in an excel sheet, they are made available in SAS library as different datasets.
 
 
 ## Chapter 6 Questions
 [Chapter 6, Problem 3]
 - Question (AS): What are the additional commands used to direct the DATA step not to execute for each record? What are the conditions in which we need to use such commands and what are the advantages? Can we give an example?
 - Answer (AS): Each iteration of a data step reads in data from the input file into the buffer,  the input statement writes it into the program data vector, and  at the end of the DATA step,SAS writes teh PDV contents out into the result dataset. Sometimes, you may need to test some conditions for selecting what observations get written out into teh result dataset. Based on an IF condition, The DELETE statement can be used to stop processing current iteration of data step and return to the beginning of the data step so that teh row is not written out to the result dataset.   
-- Question (YM): What errors are detected during compilation phase and execution phase?
-- Answer (YM): TBD
-- Question (YM): How is a PUT statement useful in SAS programs?
-- PUT statement can be used to print custom messages in the log file inside a PROC or DATA step. It is very useful to print custom messages,and printing variable values which can be very useful for debugging.
+- Question(YM): What errors are detected during compilation phase and execution phase?
+- Answer(YM): TBD
+- Question(YM): How is a PUT statement useful in SAS programs?
+- Answer(YM): PUT statement can be used to print custom messages in the log file inside a PROC or DATA step. It is very useful to print custom messages,and printing variable values which can be very useful for debugging.
 
 [Chapter 6 , Problem 6]
 - Question (SK): When does LINES or CARDS  statements are used in the last statement of a data step ? when both are alias of   DATALINE statement?
@@ -90,21 +90,21 @@ Answer(YM): If the statement is not terminated with a semicolon, SAS considers t
 
 
 ## Chapter 7 Questions
-- Question (YM): What is the difference between placing FORMAT in DATA step vs PROC step?
-- Answer (YM): If FORMAT is placed in DATA step, it permanently associates that format with the variable where as in PROC step, the data is only displayed in that format.
+- Question(YM): What is the difference between placing FORMAT in DATA step vs PROC step?
+- Answer(YM): If FORMAT is placed in DATA step, it permanently associates that format with the variable where as in PROC step, the data is only displayed in that format.
 
 ## Chapter 8 Questions
 - Question (YM) What are the different descriptive statistics produced by SAS?
 - Answer (YM): The different descriptive statistics produced by SAS are confidence limit (CLM), Corrected sum of Squares (CSS), Coefficient of Variation (CV), Kurtosis (Kurtosis), LCLM (One sided confidence limit), Maximum (MAX), Average(MEAN), Mode (MODE), Minimum (MIN), N(Number of Obs), Num of Obs with missing values (NMISS), Range (RANGE), Skewness (SKEWNESS), Std Dev (STD), Standard error of mean (STDERR), sum(SUM), Sum of the weight variable values(SUMWGT), Uncorrected sum of squares (USS), Variance (VAR).
 
 ## Chapter 10 Questions
-- Question (YM): Does proper indentation required in SAS?
-- Answer (YM): Proper indentation is not required in SAS, however it's a good practice to have proper indentation so the code becomes easier to read and debug and loops and conditional statements can be easily identified where they are beginging and ending.
+- Question(YM): Does proper indentation required in SAS?
+- Answer(YM): Proper indentation is not required in SAS, however it's a good practice to have proper indentation so the code becomes easier to read and debug and loops and conditional statements can be easily identified where they are beginging and ending.
 
 
 ## Chapter 11 Questions
-- Question (YM): What is the difference between specifying DROP= and KEEP= statemetns in DATA or SET statements?
-- Answer (YM): Depening on where DROP= and KEEP= are specified, the data will be retained either in the output or input.
+- Question(YM): What is the difference between specifying DROP= and KEEP= statemetns in DATA or SET statements?
+- Answer(YM): Depening on where DROP= and KEEP= are specified, the data will be retained either in the output or input.
 
 ## Chapter 12 Questions
 
@@ -120,16 +120,16 @@ Answer(YM): If the statement is not terminated with a semicolon, SAS considers t
 
  * Answer: TBD
  
- - Question (YM): What is the difference between Merge and Append?
- - Answer (YM): Merge will combine data horizontally based on common variable values whereas append will add the data vertically. The difference is adding columns vs rows.
+ - Question(YM): What is the difference between Merge and Append?
+ - Answer(YM): Merge will combine data horizontally based on common variable values whereas append will add the data vertically. The difference is adding columns vs rows.
  
 ## Chapter 13 Questions
-- Question (YM): What is the difference between PUT and INPUT?
-- Answer (YM): TBD
+- Question(YM): What is the difference between PUT and INPUT?
+- Answer(YM): TBD
 
 ## Chapter 14 Questions
-- Question (YM): What are the different types of loops and condition statements supported by SAS?
-- Answer (YM): TBD
+- Question(YM): What are the different types of loops and condition statements supported by SAS?
+- Answer(YM): TBD
 
 
 ## Chapter 15 Questions
