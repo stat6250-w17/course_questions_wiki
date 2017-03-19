@@ -196,6 +196,10 @@ e:g
 - Question (WF): Must you always have a data out in the proc signature? 
 - Answer (WF): The PROC Step or Procedure Step processes one (or more) data set(s) in some way to produce a result. This step is one of two types of SAS program steps, the other being a DATA Step, both are fundamental components of the SAS Language.
 
+\[Chapter 4, Problem 9]\
+- Question (IW): Can you substitute a WHERE statement with IF or HAVING statement?
+- Answer : TBD
+
 \[Chapter 4, Problem 10\]
 - Question (WF): what’s to do if we want to remove columns or rows for the table that is not sorted through frequency?
 - Answer (WF): To remove observations in SAS, you can use the IF statement in a DATA step, search and remove matched observation. 
