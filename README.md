@@ -485,6 +485,7 @@ proc format library=sample_formats;
 \[Chapter 10, Problem 2\]
 - Question (WF): Is it always true proc formats and labels will trump labels and formats defined in data steps?
 - Answer (WF): SAS program is executed in sequential order.
+- Answer (AS): Proc format is only a format definition process. They need to be explicitly assigned to a variable. If the assignment is done in a data step its permanent. But any format assignments that are done in a PROC PRINT etc step supercede the data step format assignments for teh variable.  
 
 - Question (IW): What if users want to add an accumulator variable grouped by other variables? For the example in data set Clinic.Stress, how do we calculate total number of cumulative elapsed seconds, say by age group?
 - Answer : TBD
@@ -508,6 +509,7 @@ proc format library=sample_formats;
 
 - Question (WF): Are the values deleted using the IF..THEN DELETE statement permanently deleted from the data set?
 - Answer (WF): Use the DELETE statement when it is easier to specify a condition that excludes observations from the data set or when there is no need to continue processing the DATA step statements for the current observation. To actually delete the records and renumber the remaining observations, use the PURGE statement.
+- Answer (AS): The DELETE statement in effect clears the Program data vector and hence prevents the record from being written out to the dataset in a DATA step.
 
 \[Chapter 10, Question 9\]
 - Question (WF): How to rewrite the length statement so that the program can run successfully?
@@ -532,10 +534,12 @@ proc format library=sample_formats;
 
 - Question (SK): What will happen if a variable is droped in the set statement ,can it be used in processing data for dataset?
 - Answer (IW) : No. When *DROP* option is used in the *SET* statement, the new dataset will not contain the variables that were dropped from the old dataset. The program data vector used to create the new temporary dataset will only contain variables that were not dropped in the *SET* statement. 
+- Answer (AS): The DROP option is used to indicate that the variable should not part of the PDV. However, the variable will still be available during the execution of the DATA step and can be used for evaluating expression, summing statements etc. 
 
 \[Chapter 11 problem 2\]
 - Question (WF): For creating a new SAS dataset, can we use more than two dataset in set statement?  
 - Answer (WF): Yes, by using MERGE statement.
+- Answer (AS): Multiple data sets can be combined using SET or MERGE. Choose carefully after understanding the structure of the individual datasets and the intended purpose of combining.
 
 \[Chapter 11, Problem 3\]: 
 - Question (WF): Is there away to print out the FIRST. and LAST. observation within the dataset?
@@ -565,6 +569,7 @@ proc format library=sample_formats;
 \[Chapter 11, Problem 8\]
 - Question (WF): Can an END= option have any observation in a data set and not only last?
 - Answer (WF): Yes, use the END= option on a SET statement to determine the last observation of your choice in the data set.
+- Answer (AS): while using END=variablename , the variable is initially set to 0 and its values changes to 1 automatically when the last observation in a dataset is read. 
 
 - Question (WF): END= and POINT= are very similar, why END is to name a variable, but POINT is to get a value from the variable? 
 - Answer (WF): POINT statement specifies a temporary variable whose numeric value determines which observation is read. POINT= causes the SET statement to use random (direct) access to read a SAS data set.
