@@ -765,6 +765,11 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 - Question (IW): When reading a cost values, suppose one of the values, eg: 298.99, is displayed without a dollar sign. How do you read the cost when some values have a dollar sign in front and some do not have a dollar sign in front?
 - Answer : TBD
 
+[Chapter 16, General question]
+- Question (AS): what option is used specify the character that marks end-of-record ? is it always an asterix ? 
+- Answer (AS): TERMSTR=LF 
+- Question (AS): Is there a limit for the w specification in the informat for a character field ?
+- Answer : TBD
 
 ## Chapter 17 Questions
 
@@ -781,7 +786,8 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 - Answer (WF): You can use DLMSTR option on the INFILE statement. If you set DLMSTR='2C09'X then it will treat multiple delimiters, such as comma and tab as the delimiter between fields.
 
 - Question(IW) : How do you read values that contain delimiters inside a column, for instance, a phone number may be listed as 717-920-5690 but this number needs to be displayed in SAS output without the '-'?
-- Answer : TBD
+- Answer (AS): You could create a new variable and use the TRANSWRD funtion to remove all occurences of '-'. 
+.e.g  newPhone=tranwrd(phone, '-' , '');
 
 \[Chapter 17, Problem 7\]
 - Question (WF): Can length and input command not used together?
@@ -803,6 +809,10 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 
 - Question (WF): How can free-formatted and formatted variables combined?
 - Answer (WF): Using formatted input allows you to read both standard and nonstandard numeric data. That is, formatted input combines the features of column input with the ability to read nonstandard data values.
+
+[Chapter 17, General question]
+- Question (AS): does the & modifier only affect how the column for which it is specified or does it interpret  double blanks as the delimiter for all columns?
+- Answer : TBD 
 
 ## Chapter 19 Questions
 
@@ -855,7 +865,7 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 
 [Chapter 20 , Problem 6]
 - Question (SK): Is it possible to get the calculations like summation or average of the data values in each iteration when using @@?
-- Answer: TBD
+- Answer (AS): Yes, the summation and average tasks can still be performed as you would for each iteration of the data step. The only purpose of '@@' is to tell SAS how long to hold on to the current record for use as input for teh DATA step iteration. 
 
 \[Chapter 20, Problem 3\]
 - Question (WF): Can there be a scenario in which both a @ and @@ is necessary?
