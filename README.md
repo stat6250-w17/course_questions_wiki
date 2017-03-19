@@ -740,6 +740,10 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 - Question (WF): Can a numeric value in array be changed to character?
 - Answer (WF): All variables that are associated with an array must be of the same type, either character or numeric. As a result, arrays are typically referred to as either character arrays or numeric arrays.
 
+\[Chapter 15, Problem 5\]
+ - Question (IW): How do you ensure all elements in an array are processed through the DO statement?
+ - Answer (IW): When using the DO statement, specify arrary dimension in the DO statement (ex: do i = 1 to 3) or use dim function with array name as the argument.
+ 
 \[Chapter 15, Problem 7\]
 - Question (WF): Can I do calculations against array?
 - Answer (WF): You can do many things with SAS arrays. You can: perform repetitive calculations, create many variables with like attributes, read data, make the same comparison for several variables, and perform table lookup.
