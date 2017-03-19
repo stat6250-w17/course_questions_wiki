@@ -342,7 +342,7 @@ Then to modify the column size, use a *PROC SQL* statement:
     
 [Chapter 6 , Problem 6]
 - Question (SK): When does LINES or CARDS  statements are used in the last statement of a data step ? when both are alias of   DATALINE statement?
-- Answer: TBD
+- Answer (IW): LINES or CARDS can be used in the last statement when reading instream data, indicating that data lines immediately follow them. Both LINES or CARDS can be used in the place of DATALINE statement.
 
 - Question (WF): Why is it so important that the variables initially be set to missing?
 - Answer (WF): SAS must have some character to display for missing, it won't allow no character.
