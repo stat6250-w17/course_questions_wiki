@@ -761,7 +761,8 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 \[Chapter 15, Problem 5\]
  - Question (IW): How do you ensure all elements in an array are processed through the DO statement?
  - Answer (IW): When using the DO statement, specify arrary dimension in the DO statement (ex: do i = 1 to 3) or use dim function with array name as the argument.
- 
+ - Answer (AS): Use the DIM funtion to determine array size and set that as the index variable for a do loop.
+
 \[Chapter 15, Problem 7\]
 - Question (WF): Can I do calculations against array?
 - Answer (WF): You can do many things with SAS arrays. You can: perform repetitive calculations, create many variables with like attributes, read data, make the same comparison for several variables, and perform table lookup.
@@ -771,6 +772,7 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 
 - Question (SK): What is the most important thing to consider when using SAS array ?
 - Answer (SK): Do not give an array the same name as a variable in the same DATA step. Also , avoid using the name of a SAS function as an array name; the array will be correct, but you won't be able to use the function in the same DATA step, and a warning will be written to the SAS log
+- Answer (AS): Keep the array size manageable and organized. Efficiency in processing should not compromise program readability.
 
 \[Chapter 15, Problem 8\]
 - Question (WF): What is the purpose of temporary array?
