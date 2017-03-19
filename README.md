@@ -693,6 +693,14 @@ word " of ", the function argument might not be interpreted as expected as long 
 - Question (WF): Can a do-loops starts with 0 instead 1?
 - Answer (WF): DO index-variable = start TO stop &lt;BY increment&gt;; both start and stop are required, and start, stop, and increment must be numbers or expressions that yield a number. That means you can pick any number.
 
+- Question (IW): Can you decrement a DO loop?
+- Answer (IW): You can decrement a DO loop's index variable by specifying a negative value for BY clause.
+
+```SAS
+	do i = 20 to 1 by -1;
+	end;
+```
+
 \[Chapter 14, Problem 4\]
 - Question (WF): If the DO-loop stops at end value, why the year is 2005 in this case? 
 - Answer (WF): The stop value in a Do-Loop must be go over than the specified range in order to stop the Do-Loop; therefore, the
