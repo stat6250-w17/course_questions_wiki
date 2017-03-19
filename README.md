@@ -45,6 +45,9 @@ The instructor will then review the pull request and make comments should furthe
 - Question (WF): In this problem, AcctNum appears like it should be set to a numeric type. What must be done to update it's type and correct the values? The first two need their underscores removed.'Romano' and 'Choi' are names, not account numbers.
 - Answer (WF): Once a variable is defined numeric or character, you cannot change it's data type, you must create a new variable.
 
+- Question (IW): If we want to store $12,345.00 without '$' or ',' do we still define informat as COMMA10. ?
+- Answer: TBD 
+
 \[Chapter 1, Problem 5\]
 - Question (WF): Is there a maximum length for variables?
 - Answer (WF): default is 8 bytes for numeric and character.
