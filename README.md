@@ -848,7 +848,7 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 - Answer (WF): Yes, line pointer does not care about where the record data resides.
 
 [Chapter 19, General Question]: 
-- Question (AS): while usign #n, does SAS read in one line at a time into the input buffer or does it retain the data from say line 1, when it encounters #2 in the code?
+- Question (AS): while using #n, does SAS read in one line at a time into the input buffer or does it retain the data from say line 1, when it encounters #2 in the code?
 - Answer :TBD
 
 ## Chapter 20 Questions
