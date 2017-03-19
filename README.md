@@ -695,7 +695,13 @@ word " of ", the function argument might not be interpreted as expected as long 
 \[Chapter 13, Problem 10\]
 - Question (WF): What happens if we take out the "lowcase" command?
 - Answer (WF): String comparisons in SAS software are case-sensitive. For example, the uppercase letter "F" and lowercase letter "f" are treated as unique characters..
- 
+
+[Chapter 13, General question]
+ - Question (AS): Can SAS funtions like TRANSWRD() be used within sql statements in a proc sql ?
+- Answer :TBD
+
+
+
 ## Chapter 14 Questions
 \[Chapter 14, Problem 1\]
 - Question (WF): What will happen if DO-loops combine both DATA and PROC steps?
