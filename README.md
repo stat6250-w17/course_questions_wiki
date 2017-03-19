@@ -196,7 +196,7 @@ e:g
 - Question (WF): Must you always have a data out in the proc signature? 
 - Answer (WF): The PROC Step or Procedure Step processes one (or more) data set(s) in some way to produce a result. This step is one of two types of SAS program steps, the other being a DATA Step, both are fundamental components of the SAS Language.
 
-\[Chapter 4, Problem 9]\
+\[Chapter 4, Problem 9\]
 - Question (IW): Can you substitute a WHERE statement with IF or HAVING statement?
 - Answer : TBD
 
@@ -485,6 +485,9 @@ proc format library=sample_formats;
 \[Chapter 10, Problem 2\]
 - Question (WF): Is it always true proc formats and labels will trump labels and formats defined in data steps?
 - Answer (WF): SAS program is executed in sequential order.
+
+- Question (IW): What if users want to add an accumulator variable grouped by other variables? For the example in data set Clinic.Stress, how do we calculate total number of cumulative elapsed seconds, say by age group?
+- Answer : TBD
 
 \[Chapter 10, Problem 7\]
 - Question (WF): What does it do with the DATA step for the length of the variable? When to use the LENGTH statement?
@@ -834,6 +837,9 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 	input 	+12 Quarter 1. @1 Region $9.
 		+6 TotalSales comma11.
 ```
+- Question (IW): In the correct answer choice A, why isn't there a / after Zip variable? How does the code know that it should move to the next record which is 'Rachel' after reading 94122 without having to run the DATA statement?
+- Answer : TBD
+
 \[Chapter 19, Problem 5\]:
 - Question (WF):  Is it possible to read in strings until reaching EOL or EOF?
 - Answer (WF): Yes, using the @@ line-hold specifiers. For example:
@@ -886,6 +892,9 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 \[Chapter 20, Problem 4\]
 - Question (WF): When we use loops with @ pointers, does this statement is heavy on SAS performance as it forces to read several iteration for a single record?
 - Answer (WF): No, it’s not really impacting the system performance.
+
+- Question (IW): What if there is data spilling into the next row? For instance, there are 3 values of Quantity repeated in the same row for each ID. Suppose for ID 2101, Quantity 22,890 is in the second row instead of the same row as ID 2101 and Quantity 22,890 is the only value in that 2nd row.
+- Answer : TBD
 
 \[Chapter 20, Problem 6\]
 - Question (WF): Is it possible to get the calculations like summation or average of the data values in each iteration when using @@?
