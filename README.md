@@ -693,14 +693,6 @@ word " of ", the function argument might not be interpreted as expected as long 
 - Question (WF): Can a do-loops starts with 0 instead 1?
 - Answer (WF): DO index-variable = start TO stop &lt;BY increment&gt;; both start and stop are required, and start, stop, and increment must be numbers or expressions that yield a number. That means you can pick any number.
 
-- Question (IW): Can you decrement a DO loop?
-- Answer (IW): You can decrement a DO loop's index variable by specifying a negative value for BY clause.
-
-```SAS
-	do i = 20 to 1 by -1;
-	end;
-```
-
 \[Chapter 14, Problem 4\]
 - Question (WF): If the DO-loop stops at end value, why the year is 2005 in this case? 
 - Answer (WF): The stop value in a Do-Loop must be go over than the specified range in order to stop the Do-Loop; therefore, the
@@ -739,6 +731,10 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 
 - Question (WF): Can a numeric value in array be changed to character?
 - Answer (WF): All variables that are associated with an array must be of the same type, either character or numeric. As a result, arrays are typically referred to as either character arrays or numeric arrays.
+
+\[Chapter 15, Problem 5\]
+- Question (IW): How do you ensure all elements in an array are processed through the DO statement?
+- Answer (IW): When using the DO statement, specify arrary dimension in the DO statement (ex: do i = 1 to 3) or use dim function with array name as the argument.
 
 \[Chapter 15, Problem 7\]
 - Question (WF): Can I do calculations against array?
