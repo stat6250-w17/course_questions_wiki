@@ -45,6 +45,9 @@ The instructor will then review the pull request and make comments should furthe
 - Question (WF): In this problem, AcctNum appears like it should be set to a numeric type. What must be done to update it's type and correct the values? The first two need their underscores removed.'Romano' and 'Choi' are names, not account numbers.
 - Answer (WF): Once a variable is defined numeric or character, you cannot change it's data type, you must create a new variable.
 
+- Question (IW): If we want to store $12,345.00 without '$' or ',' do we still define informat as COMMA10. ?
+- Answer: TBD 
+
 \[Chapter 1, Problem 5\]
 - Question (WF): Is there a maximum length for variables?
 - Answer (WF): default is 8 bytes for numeric and character.
@@ -193,6 +196,10 @@ e:g
 - Question (WF): Must you always have a data out in the proc signature? 
 - Answer (WF): The PROC Step or Procedure Step processes one (or more) data set(s) in some way to produce a result. This step is one of two types of SAS program steps, the other being a DATA Step, both are fundamental components of the SAS Language.
 
+\[Chapter 4, Problem 9\]
+- Question (IW): Can you substitute a WHERE statement with IF or HAVING statement?
+- Answer : TBD
+
 \[Chapter 4, Problem 10\]
 - Question (WF): what’s to do if we want to remove columns or rows for the table that is not sorted through frequency?
 - Answer (WF): To remove observations in SAS, you can use the IF statement in a DATA step, search and remove matched observation. 
@@ -335,7 +342,7 @@ Then to modify the column size, use a *PROC SQL* statement:
     
 [Chapter 6 , Problem 6]
 - Question (SK): When does LINES or CARDS  statements are used in the last statement of a data step ? when both are alias of   DATALINE statement?
-- Answer: TBD
+- Answer (IW): LINES or CARDS can be used in the last statement when reading instream data, indicating that data lines immediately follow them. Both LINES or CARDS can be used in the place of DATALINE statement.
 
 - Question (WF): Why is it so important that the variables initially be set to missing?
 - Answer (WF): SAS must have some character to display for missing, it won't allow no character.
@@ -480,6 +487,9 @@ proc format library=sample_formats;
 - Answer (WF): SAS program is executed in sequential order.
 - Answer (AS): Proc format is only a format definition process. They need to be explicitly assigned to a variable. If the assignment is done in a data step its permanent. But any format assignments that are done in a PROC PRINT etc step supercede the data step format assignments for teh variable.  
 
+- Question (IW): What if users want to add an accumulator variable grouped by other variables? For the example in data set Clinic.Stress, how do we calculate total number of cumulative elapsed seconds, say by age group?
+- Answer : TBD
+
 \[Chapter 10, Problem 7\]
 - Question (WF): What does it do with the DATA step for the length of the variable? When to use the LENGTH statement?
 - Answer (WF): The LENGTH function returns an integer that represents the position of the rightmost non-blank character in string. If the value of string is blank, LENGTH returns a value of 1.
@@ -511,6 +521,10 @@ proc format library=sample_formats;
 	put ’L=’l;
 	
 ```
+[Chapter 10, Question 10]
+- Question (SK): What is the purpose of "KEEP" and "DROP" statements ?
+- Answer (SK): The KEEP statement is similar to the DROP statement, except that the KEEP statement specifies a list of variables to write to output data sets. Use the KEEP statement instead of the DROP statement if the number of variables to keep is smaller than the number to drop. Also , to select variables, you can use a DROP or KEEP statement in any DATA step. You can also use the DROP= or KEEP= data set options following a data set name in any DATA or PROC step. However, you cannot use DROP or KEEP statements in PROC steps.
+
 ## Chapter 11 Questions
 
 \[Chapter 11, Problem 1\]
@@ -691,6 +705,14 @@ word " of ", the function argument might not be interpreted as expected as long 
 - Question (WF): Can a do-loops starts with 0 instead 1?
 - Answer (WF): DO index-variable = start TO stop &lt;BY increment&gt;; both start and stop are required, and start, stop, and increment must be numbers or expressions that yield a number. That means you can pick any number.
 
+- Question (IW): Can you decrement a DO loop?
+- Answer (IW): You can decrement a DO loop's index variable by specifying a negative value for BY clause.
+
+```SAS
+	do i = 20 to 1 by -1;
+	end;
+```
+
 \[Chapter 14, Problem 4\]
 - Question (WF): If the DO-loop stops at end value, why the year is 2005 in this case? 
 - Answer (WF): The stop value in a Do-Loop must be go over than the specified range in order to stop the Do-Loop; therefore, the
@@ -713,10 +735,13 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 - Question (WF): Can a Do-loops be inside another Do-loops?
 - Answer (WF): Yes, like other languages, SAS allows Do-Loop inside a Do-Loop.
 
+
 [Chapter 14, General question]
-- Question (AS): Does SAS have a statment to 'break' out of a loop ?
+- Question (AS): Does SAS have a statement to 'break' out of a loop ?
 - Answer : TBD
 
+- Question (SK): What is the purpose of insex variable ?
+- Answer (SK): The index variable is used only to execute the DO loop, so it is dropped from the new data set. It is used as the stop value in the iterative DO statement. As a result, the DO loop executes the number of times specified by the current value of variable.
 
 ## Chapter 15 Questions
 \[Chapter 15, Problem 1\]
@@ -733,12 +758,19 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 - Question (WF): Can a numeric value in array be changed to character?
 - Answer (WF): All variables that are associated with an array must be of the same type, either character or numeric. As a result, arrays are typically referred to as either character arrays or numeric arrays.
 
+\[Chapter 15, Problem 5\]
+ - Question (IW): How do you ensure all elements in an array are processed through the DO statement?
+ - Answer (IW): When using the DO statement, specify arrary dimension in the DO statement (ex: do i = 1 to 3) or use dim function with array name as the argument.
+ 
 \[Chapter 15, Problem 7\]
 - Question (WF): Can I do calculations against array?
 - Answer (WF): You can do many things with SAS arrays. You can: perform repetitive calculations, create many variables with like attributes, read data, make the same comparison for several variables, and perform table lookup.
 
 - Question (WF): How do I combine two arrays?
 - Answer (WF): You need to extract variable’s value from source array, perform calculation, and then write value to the destination array.
+
+- Question (SK): What is the most important thing to consider when using SAS array ?
+- Answer (SK): Do not give an array the same name as a variable in the same DATA step. Also , avoid using the name of a SAS function as an array name; the array will be correct, but you won't be able to use the function in the same DATA step, and a warning will be written to the SAS log
 
 \[Chapter 15, Problem 8\]
 - Question (WF): What is the purpose of temporary array?
@@ -845,6 +877,9 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 	input 	+12 Quarter 1. @1 Region $9.
 		+6 TotalSales comma11.
 ```
+- Question (IW): In the correct answer choice A, why isn't there a / after Zip variable? How does the code know that it should move to the next record which is 'Rachel' after reading 94122 without having to run the DATA statement?
+- Answer : TBD
+
 \[Chapter 19, Problem 5\]:
 - Question (WF):  Is it possible to read in strings until reaching EOL or EOF?
 - Answer (WF): Yes, using the @@ line-hold specifiers. For example:
@@ -902,6 +937,9 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 \[Chapter 20, Problem 4\]
 - Question (WF): When we use loops with @ pointers, does this statement is heavy on SAS performance as it forces to read several iteration for a single record?
 - Answer (WF): No, it’s not really impacting the system performance.
+
+- Question (IW): What if there is data spilling into the next row? For instance, there are 3 values of Quantity repeated in the same row for each ID. Suppose for ID 2101, Quantity 22,890 is in the second row instead of the same row as ID 2101 and Quantity 22,890 is the only value in that 2nd row.
+- Answer : TBD
 
 \[Chapter 20, Problem 6\]
 - Question (WF): Is it possible to get the calculations like summation or average of the data values in each iteration when using @@?
