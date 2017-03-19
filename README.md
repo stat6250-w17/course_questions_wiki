@@ -875,10 +875,15 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 \[Chapter 19, Problem 7\]:
 - Question (WF):  What is the name of the '&' operator?
 - Answer (WF): There is no special name for ‘&’ in SAS, it’s still called “ampersand”.
+- Answer (AS): The ampersand is used a the logical operator 'AND'. It is used as a prefix of macro variables .
 
 \[Chapter 19, Problem 8\]: 
 - Question (WF): Can one use the line pointer control in both a relative and absolute context?
 - Answer (WF): Yes, line pointer does not care about where the record data resides.
+
+[Chapter 19, General Question]: 
+- Question (AS): while usign #n, does SAS read in one line at a time into the input buffer or does it retain the data from say line 1, when it encounters #2 in the code?
+- Answer :TBD
 
 ## Chapter 20 Questions
 
@@ -925,4 +930,8 @@ execution of the next INPUT statement, even across iterations of the DATA step. 
 
 - Question (WF): Should MISSOVER always be included as a default to prevent data being read incorrectly, or can its presence cause issues if it is not necessary?
 - Answer (WF): When the MISSOVER option is used on the INFILE statement, the INPUT statement does not jump to the next line when reading a short line. Instead, MISSOVER sets variables to missing. Whether or no to use MISSOVER depends on how the structure of the raw data file.
-
+\[Chapter 20, General question]
+- Question (AS): Is there a way to determine if there are equal number of records per observation prior to processing them for combining them into a single observation ?
+- Answer :TBD
+- Question (AS): In data files where there are a number of records per observation, how should missing data be represented, so that there are no SAS errors in interpreting the data?
+- Answer :TBD
