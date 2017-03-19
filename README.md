@@ -616,6 +616,7 @@ proc format library=sample_formats;
 [Chapter 12 Question 5]
 - Question (SK): What if the the same name variables have different value ? Will merging work in this case?
 - Answer (SK): If you have variables with the same name in more than one input data set, values of the same-named variable in the first data set in which it appears are overwritten by values of the same-named variable in subsequent data sets.
+- Answer (AS): Additionally, if the same named variables have different lengths in the two datasets, the variable will assume the length as itd defined in the first dataset in the merge statement. In order to avoid data truncation, use a drop-and-swap startegy to avoid truncation.
 
 \[Chapter 12, Problem 9\]
 - Question (WF): What should be done when there are more observations in the BY group but less values for variables?
@@ -630,6 +631,12 @@ proc format library=sample_formats;
 			if eof then call symput("nobs",count);
 		run;
 ```
+
+[Chapter 12, General question]
+- Question (AS): Does PROC APPEND check for duplicates while appending the new 
+   dataset ? How does SAS evaluate duplicates ? Do we specify a 'key' for 
+   a dataset while creating it ?
+- Answer : TBD
 
 ## Chapter 13 Questions
 
@@ -719,6 +726,7 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 \[Chapter 14, Problem 7\] 
 - Question (WF): What are the differences between Do-Until and Do-While?
 - Answer (WF): DO WHILE test is evaluated at the top of the loop. DO UNTIL test is evaluated at the bottom of the loop.
+- Answer (AS):  Do Until is executed at least once, but DO while is executed only if the condition is true.
 
 - Question (WF): What is the example prefer Do-Until over Do-While?
 - Answer (WF): Do-until carries out action statement first then evaluate the result, whether it goes beyond the predefined range. Do-While evaluate input condition before execute the action statement.
@@ -726,6 +734,11 @@ statement. Placing an explicit OUTPUT statement in a DATA step overrides the aut
 \[Chapter 14, Problem 9\]
 - Question (WF): Can a Do-loops be inside another Do-loops?
 - Answer (WF): Yes, like other languages, SAS allows Do-Loop inside a Do-Loop.
+
+
+[Chapter 14, General question]
+- Question (AS): Does SAS have a statement to 'break' out of a loop ?
+- Answer : TBD
 
 - Question (SK): What is the purpose of insex variable ?
 - Answer (SK): The index variable is used only to execute the DO loop, so it is dropped from the new data set. It is used as the stop value in the iterative DO statement. As a result, the DO loop executes the number of times specified by the current value of variable.
